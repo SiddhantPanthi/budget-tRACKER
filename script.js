@@ -1,10 +1,7 @@
 document.getElementById('expForm').addEventListener('submit', addTransaction);
-// initial array of transactions, reading from localStorage
 const transactions = JSON.parse(localStorage.getItem('transactions')) || [];
 function addTransaction(e) {
   e.preventDefault();
-
-  // get type, name, and amount
   let type = document.getElementById('type').value;
   let name = document.getElementById('name').value;
   let amount = document.getElementById('amount').value;
@@ -20,7 +17,6 @@ function addTransaction(e) {
     }
 
     transactions.push(transaction);
-    // localStorage 
     localStorage.setItem('transactions', JSON.stringify(transactions));
   }
 
